@@ -18,6 +18,7 @@ class BioMetricAuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bio_metric_auth)
+        window.decorView.rootView.setFilterTouchesWhenObscured(true)
 
         val bioAuth = findViewById<Button>(R.id.bioauth)
         val builder = androidx.appcompat.app.AlertDialog.Builder(this)

@@ -18,6 +18,7 @@ class CloudServicesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_cloud_services)
+        window.decorView.rootView.setFilterTouchesWhenObscured(true)
         val cloudServices = findViewById<Button>(R.id.viewCloudServices)
         val builder = androidx.appcompat.app.AlertDialog.Builder(this)
         builder.setTitle("Login")

@@ -21,6 +21,7 @@ class InsecureStorageSQLiteActivity : AppCompatActivity() {
             Log.e("Error:", "Error occurred while creating database: ${e.message}")
         }
         setContentView(R.layout.activity_insecure_storage_sqlite)
+        window.decorView.rootView.setFilterTouchesWhenObscured(true)
 
         val saveButton = findViewById<Button>(R.id.SQLButton)
         val username = findViewById<EditText>(R.id.userName)
@@ -29,10 +30,10 @@ class InsecureStorageSQLiteActivity : AppCompatActivity() {
         saveButton.setOnClickListener {
             val builder = androidx.appcompat.app.AlertDialog.Builder(this)
             builder.setTitle("Login")
-            val qry = "INSERT INTO users (username, password) VALUES('${username.text}','${password.text}')"
+            val qry = "INSERT INTO users (username, password) VALUES (?, ?)"
 
             try {
-                mDB?.execSQL(qry)
+                mDB?.execSQL(qry, arrayOf(username.text.toString(), password.text.toString()))
                 builder.setMessage("Username and Password are verified")
                 Toast.makeText(applicationContext, "Username and Password are verified", Toast.LENGTH_LONG).show()
             } catch (e: Exception) {

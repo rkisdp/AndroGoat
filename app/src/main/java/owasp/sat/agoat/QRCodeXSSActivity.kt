@@ -20,6 +20,7 @@ class QRCodeXSSActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qrcode_xssactivity)
+        window.decorView.rootView.setFilterTouchesWhenObscured(true)
 
         // 1. Check Camera Permissions
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)

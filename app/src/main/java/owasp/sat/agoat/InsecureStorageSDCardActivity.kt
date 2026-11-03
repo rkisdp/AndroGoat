@@ -15,6 +15,7 @@ class InsecureStorageSDCardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insecure_storage_sdcard)
+        window.decorView.rootView.setFilterTouchesWhenObscured(true)
 
         val saveButton = findViewById<Button>(R.id.SDcardSaveButton)
         val username = findViewById<EditText>(R.id.userName)

@@ -14,6 +14,7 @@ class ClipboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_clipboard)
+        window.decorView.rootView.setFilterTouchesWhenObscured(true)
         val ccValue = findViewById<EditText>(R.id.cc)
         val verifyCC = findViewById<Button>(R.id.verifyCC)
         val builder = androidx.appcompat.app.AlertDialog.Builder(this)

@@ -17,6 +17,7 @@ class AccessControlIssue1Activity : AppCompatActivity() {
             verifyPINView()
         } else {
             setContentView(R.layout.activity_access_control_issue1)
+            window.decorView.rootView.setFilterTouchesWhenObscured(true)
             val setPINButton = findViewById<Button>(R.id.setPIN)
             setPINButton.setOnClickListener {
                 val pinValue = findViewById<EditText>(R.id.setpin)
@@ -51,6 +52,7 @@ class AccessControlIssue1Activity : AppCompatActivity() {
 
     private fun verifyPINView() {
         setContentView(R.layout.activity_access_verify_pin)
+        window.decorView.rootView.setFilterTouchesWhenObscured(true)
         val verifyPINButton = findViewById<Button>(R.id.verifyPIN)
         verifyPINButton.setOnClickListener {
             val pinValue = findViewById<EditText>(R.id.pinValue)

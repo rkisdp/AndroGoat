@@ -12,6 +12,7 @@ class InsecureLoggingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insecure_logging)
+        window.decorView.rootView.setFilterTouchesWhenObscured(true)
         val username = findViewById<EditText>(R.id.userName)
         val password = findViewById<EditText>(R.id.password)
         val loggingButton = findViewById<Button>(R.id.Logging1)
